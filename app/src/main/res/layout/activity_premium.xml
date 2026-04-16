@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="28dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="👑" android:textSize="64sp" android:layout_marginBottom="16dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Go Premium" android:textSize="28sp" android:textStyle="bold"
+            android:textColor="@color/text_primary" android:layout_marginBottom="8dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Unlock the full potential of BuyMyPhone"
+            android:textSize="14sp" android:textColor="@color/text_secondary"
+            android:gravity="center" android:layout_marginBottom="32dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp" app:cardBackgroundColor="@color/card_bg"
+            app:cardElevation="6dp" app:strokeColor="@color/accent_gold"
+            app:strokeWidth="1.5dp" android:layout_marginBottom="28dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="24dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Premium Features" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="@color/accent_gold" android:layout_marginBottom="12dp" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="✅  Unlimited reports\n✅  Advanced scoring engine\n✅  Priority PDF export\n✅  Device database access\n✅  Historical trend analysis\n✅  Export to cloud storage\n✅  No advertisements"
+                    android:textSize="13sp" android:textColor="@color/text_secondary" android:lineSpacingExtra="6dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPurchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activate Premium"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="16dp"
+            app:cornerRadius="16dp"
+            app:backgroundTint="@color/accent_gold"
+            android:textColor="@color/white" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="One-time purchase · No subscription"
+            android:textSize="11sp" android:textColor="@color/text_tertiary"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
