@@ -147,10 +147,18 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                android:text="Performance" android:textSize="11sp" android:textColor="@color/text_secondary" />
-                            <TextView android:id="@+id/tvPerfScore" android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:textSize="26sp" android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Performance"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvPerfScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -159,10 +167,18 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                android:text="Display" android:textSize="11sp" android:textColor="@color/text_secondary" />
-                            <TextView android:id="@+id/tvDisplayScore" android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:textSize="26sp" android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Display"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvDisplayScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -171,10 +187,18 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                android:text="Camera" android:textSize="11sp" android:textColor="@color/text_secondary" />
-                            <TextView android:id="@+id/tvCameraScore" android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:textSize="26sp" android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Camera"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvCameraScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -183,10 +207,18 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                android:text="Battery" android:textSize="11sp" android:textColor="@color/text_secondary" />
-                            <TextView android:id="@+id/tvBatteryScore" android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:textSize="26sp" android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Battery"
+                                android:textSize="11sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvBatteryScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -221,40 +253,141 @@
                         android:textColor="@color/text_primary"
                         android:layout_marginBottom="12dp" />
 
-                    <include layout="@layout/partial_spec_row"
+                    <include
                         android:id="@+id/rowSoc"
+                        layout="@layout/partial_spec_row"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <!-- Specs rows using simple TextViews for brevity -->
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Processor" android:textSize="12sp" android:textColor="@color/text_secondary" />
-                        <TextView android:id="@+id/tvSpecSoc" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Processor"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvSpecSoc"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="RAM" android:textSize="12sp" android:textColor="@color/text_secondary" />
-                        <TextView android:id="@+id/tvSpecRam" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="RAM"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvSpecRam"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Storage" android:textSize="12sp" android:textColor="@color/text_secondary" />
-                        <TextView android:id="@+id/tvSpecStorage" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Storage"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvSpecStorage"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Display" android:textSize="12sp" android:textColor="@color/text_secondary" />
-                        <TextView android:id="@+id/tvSpecDisplay" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Display"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvSpecDisplay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Camera" android:textSize="12sp" android:textColor="@color/text_secondary" />
-                        <TextView android:id="@+id/tvSpecCamera" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Camera"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvSpecCamera"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Battery" android:textSize="12sp" android:textColor="@color/text_secondary" />
-                        <TextView android:id="@+id/tvSpecBattery" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Battery"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvSpecBattery"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -289,85 +422,4 @@
                         android:layout_marginBottom="10dp" />
 
                     <TextView
-                        android:id="@+id/tvHighlights"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@color/text_secondary"
-                        android:lineSpacingExtra="4dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/divider"
-                        android:layout_marginVertical="14dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="⚠️  Weaknesses"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/warning_orange"
-                        android:layout_marginBottom="10dp" />
-
-                    <TextView
-                        android:id="@+id/tvWeaknesses"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@color/text_secondary"
-                        android:lineSpacingExtra="4dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/divider"
-                        android:layout_marginVertical="14dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="💡  Recommendations"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/accent_blue"
-                        android:layout_marginBottom="10dp" />
-
-                    <TextView
-                        android:id="@+id/tvRecommendations"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:textColor="@color/text_secondary"
-                        android:lineSpacingExtra="4dp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Action Buttons -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSaveReport"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Save Report"
-                    android:textSize="15sp"
-                    android:paddingVertical="14dp"
-                    app:cornerRadius="14dp"
-                    app:backgroundTint="@color/accent_blue"
-                    android:layout_marginBottom="12dp" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnExportPdf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="📄 Save PDF Report"
-                    android:textSize="15sp"
-        
+                        andro
