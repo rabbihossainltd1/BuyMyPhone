@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Verdict Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardVerdict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="10dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvVerdictEmoji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvVerdictLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Score Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="16dp"
+                android:alpha="0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <com.buymyphone.app.ui.views.ScoreCircleView
+                        android:id="@+id/scoreCircle"
+                        android:layout_width="180dp"
+                        android:layout_height="180dp" />
+
+                    <TextView
+                        android:id="@+id/tvConfidence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Summary grid -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Software Risk" android:textSize="10sp" android:textColor="@color/text_secondary" />
+                            <TextView android:id="@+id/tvSoftwareRisk" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="12sp" android:textStyle="bold"
+                                android:textColor="@color/text_primary" />
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Hardware" android:textSize="10sp" android:textColor="@color/text_secondary" />
+                            <TextView android:id="@+id/tvHardwareScore" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="12sp" android:textStyle="bold"
+                                android:textColor="@color/text_primary" />
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Fair Price" android:textSize="10sp" android:textColor="@color/text_secondary" />
+                            <TextView android:id="@+id/tvFairPrice" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:textSize="10sp" android:textStyle="bold"
+                                android:textColor="@color/text_primary" android:gravity="center" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Why Buy -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWhyBuy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/success_green_stroke"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="12dp"
+                android:alpha="0">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Why Buy" android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/success_green" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/tvWhyBuy" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="13sp"
+                        android:textColor="@color/text_secondary" android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Why Avoid -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWhyAvoid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/warning_orange_stroke"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="12dp"
+                android:alpha="0">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Why Avoid" android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/warning_orange" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/tvWhyAvoid" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="13sp"
+                        android:textColor="@color/text_secondary" android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="20dp"
+                android:alpha="0">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Resale Verdict" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="4dp" />
+                    <TextView android:id="@+id/tvResaleVerdict" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="12sp"
+                        android:textColor="@color/text_secondary" android:layout_marginBottom="12dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Buyer Warning" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="4dp" />
+                    <TextView android:id="@+id/tvBuyerWarning" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="12sp"
+                        android:textColor="@color/text_secondary" android:layout_marginBottom="12dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Seller Recommendation" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="4dp" />
+                    <TextView android:id="@+id/tvSellerRecommendation" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="12sp"
+                        android:textColor="@color/text_secondary" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExportPdf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📄  Save Full PDF Report"
+                android:textSize="15sp"
+                android:paddingVertical="14dp"
+                app:cornerRadius="14dp"
+                app:backgroundTint="@color/accent_blue" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
