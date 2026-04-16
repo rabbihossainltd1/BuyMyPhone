@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Theme Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="18dp"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Theme"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:id="@+id/tvThemeLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Light Mode"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Reports info -->
+            <TextView
+                android:id="@+id/tvReportCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 reports stored"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:paddingHorizontal="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Settings items -->
+            <include layout="@layout/partial_settings_item"
+                android:id="@+id/itemReportsHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/partial_settings_item"
+                android:id="@+id/itemCompareTwoPhones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/partial_settings_item"
+                android:id="@+id/itemHeavyApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/partial_settings_item"
+                android:id="@+id/itemGoPremium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/partial_settings_item"
+                android:id="@+id/itemClearReports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
