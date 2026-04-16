@@ -1,5 +1,6 @@
 package com.buymyphone.app.ui.settings
 
+import android.app.ActivityManager
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -22,8 +23,12 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply { setDisplayHomeAsUpEnabled(true); title = "Settings" }
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            title = "Settings"
+        }
 
         loadCurrentSettings()
         setupObservers()
@@ -31,7 +36,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun loadCurrentSettings() {
-        val prefs  = getSharedPreferences(BuyMyPhoneApplication.PREFS_NAME, MODE_PRIVATE)
+        val prefs = getSharedPreferences(BuyMyPhoneApplication.PREFS_NAME, MODE_PRIVATE)
         val isDark = prefs.getBoolean(BuyMyPhoneApplication.KEY_DARK_MODE, false)
         binding.switchDarkMode.isChecked = isDark
         updateThemeLabel(isDark)
@@ -49,7 +54,7 @@ class SettingsActivity : AppCompatActivity() {
             updateThemeLabel(isChecked)
             AppCompatDelegate.setDefaultNightMode(
                 if (isChecked) AppCompatDelegate.MODE_NIGHT_YES
-                else           AppCompatDelegate.MODE_NIGHT_NO
+                else AppCompatDelegate.MODE_NIGHT_NO
             )
         }
 
@@ -80,7 +85,9 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun saveTheme(isDark: Boolean) {
         getSharedPreferences(BuyMyPhoneApplication.PREFS_NAME, MODE_PRIVATE)
-            .edit().putBoolean(BuyMyPhoneApplication.KEY_DARK_MODE, isDark).apply()
+            .edit()
+            .putBoolean(BuyMyPhoneApplication.KEY_DARK_MODE, isDark)
+            .apply()
     }
 
     private fun showClearConfirmation() {
@@ -95,6 +102,34 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun detectHeavyApps() {
-        val am  = getSystemService(ACTIVITY_SERVICE) as android.app.ActivityManager
+        val am = getSystemService(ACTIVITY_SERVICE) as ActivityManager
         val procs = am.runningAppProcesses ?: emptyList()
         val memInfo = am.getMemInfo()
+
+        val usedRamMb = (memInfo.totalMem - memInfo.availMem) / (1024 * 1024)
+        val totalRamMb = memInfo.totalMem / (1024 * 1024)
+
+        val msg = if (procs.isNotEmpty()) {
+            "${procs.size} processes running.\nRAM in use: ${usedRamMb} MB / ${totalRamMb} MB\nUse Developer Options > Running Services for full detail."
+        } else {
+            "Unable to detect running processes.\nRAM in use: ${usedRamMb} MB / ${totalRamMb} MB"
+        }
+
+        AlertDialog.Builder(this)
+            .setTitle("Heavy Apps")
+            .setMessage(msg)
+            .setPositiveButton("OK", null)
+            .show()
+    }
+
+    private fun ActivityManager.getMemInfo(): ActivityManager.MemoryInfo {
+        val info = ActivityManager.MemoryInfo()
+        getMemoryInfo(info)
+        return info
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
+    }
+}
