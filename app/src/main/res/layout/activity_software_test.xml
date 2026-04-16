@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Progress layout -->
+        <LinearLayout
+            android:id="@+id/layoutProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:indeterminate="true"
+                app:indicatorColor="@color/accent_blue"
+                android:layout_marginBottom="24dp" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:indicatorColor="@color/accent_blue"
+                app:trackColor="@color/progress_track"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/accent_blue"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Starting analysis…"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- Results layout -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Risk Banner -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/card_bg"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/card_stroke"
+                    app:strokeWidth="1dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <View
+                            android:id="@+id/viewRiskIndicator"
+                            android:layout_width="4dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvRiskLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tvRiskSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <!-- Stats row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp">
+
+                            <TextView android:id="@+id/tvPassCount" android:layout_width="0dp"
+                                android:layout_height="wrap_content" android:layout_weight="1"
+                                android:textSize="13sp" android:textColor="@color/success_green"
+                                android:textStyle="bold" android:gravity="center" />
+
+                            <TextView android:id="@+id/tvWarningCount" android:layout_width="0dp"
+                                android:layout_height="wrap_content" android:layout_weight="1"
+                                android:textSize="13sp" android:textColor="@color/warning_orange"
+                                android:textStyle="bold" android:gravity="center" />
+
+                            <TextView android:id="@+id/tvFailCount" android:layout_width="0dp"
+                                android:layout_height="wrap_content" android:layout_weight="1"
+                                android:textSize="13sp" android:textColor="@color/danger_red"
+                                android:textStyle="bold" android:gravity="center" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Checks RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerChecks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Action Buttons -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOpenBuySell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💰  View Buy/Sell Analysis"
+                    android:textSize="15sp"
+                    android:paddingVertical="14dp"
+                    app:cornerRadius="14dp"
+                    app:backgroundTint="@color/success_green"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExportPdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📄  Export PDF"
+                    android:textSize="15sp"
+                    android:paddingVertical="14dp"
+                    app:cornerRadius="14dp"
+                    app:backgroundTint="@color/accent_blue"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
